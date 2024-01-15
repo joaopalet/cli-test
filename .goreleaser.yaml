@@ -1,0 +1,77 @@
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - id: linux-builds
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+    binary: "jp-cli"
+
+  - id: windows-builds
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - windows
+    binary: "jp-cli"
+  
+  - id: macos-builds
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - darwin
+    binary: "jp-cli"
+
+archives:
+  - format: tar.gz
+    # This name template makes the OS and Arch compatible with the results of `uname`.
+    name_template: >-
+      {{ .ProjectName }}_
+      {{- title .Os }}_
+      {{- if eq .Arch "amd64" }}x86_64
+      {{- else if eq .Arch "386" }}i386
+      {{- else }}{{ .Arch }}{{ end }}
+      {{- if .Arm }}v{{ .Arm }}{{ end }}
+    
+    # Use zip for windows archives
+    format_overrides:
+      - goos: windows
+        format: zip
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+
+nfpms:
+  - id: linux-packages
+
+    # Build IDs for the builds you want to create NFPM packages for.
+    # Defaults empty, which means no filtering.
+    builds:
+      - linux-builds
+
+    # Your app's vendor.
+    vendor: JP
+
+    # Your app's homepage.
+    homepage: https://github.com/joaopalet
+
+    # Your app's maintainer.
+    # Which email to use here? Technical account email?
+    maintainer: JP <joao.palet@outlook.com>
+
+    # Your app's description.
+    description: A command-line interface built by JP.
+
+    # Your app's license.
+    license: Apache 2.0
+
+    # Formats to be generated.
+    formats:
+      - deb
+      - rpm
