@@ -79,7 +79,6 @@ nfpms:
 signs:
   - artifacts: package
     args: ["-u", "{{ .Env.GPG_FINGERPRINT }}", "--output", "${signature}", "--detach-sign", "${artifact}"]
-    stdin: "{{ .Env.GPG_PASSWORD }}"
 
 brews:
   - tap:
