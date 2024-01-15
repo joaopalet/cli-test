@@ -76,6 +76,10 @@ nfpms:
       - deb
       - rpm
 
+signs:
+  - artifacts: package
+    args: ["-u", "{{ .Env.GPG_PRIVATE_KEY }}", "--output", "${signature}", "--detach-sign", "${artifact}"]
+
 brews:
   - tap:
       owner: joaopalet

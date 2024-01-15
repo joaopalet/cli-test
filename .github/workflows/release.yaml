@@ -34,3 +34,4 @@ jobs:
           # GitHub sets the GITHUB_TOKEN secret automatically.
           # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}

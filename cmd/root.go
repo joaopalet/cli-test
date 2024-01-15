@@ -12,8 +12,8 @@ import (
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "jp-cli",
-	Short: "A test CLI build by JP (v0.0.5)",
-	Long:  `A test CLI build by JP (v0.0.5). I will try to distirbute it using Homebrew.`,
+	Short: "A test CLI build by JP (v0.0.7)",
+	Long:  `A test CLI build by JP (v0.0.7). I will try to distirbute it using Homebrew.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },
