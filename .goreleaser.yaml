@@ -75,3 +75,15 @@ nfpms:
     formats:
       - deb
       - rpm
+
+brews:
+  - tap:
+      owner: joaopalet
+      name: homebrew-cli-test
+    commit_author:
+      name: joaopalet
+      email: joao.palet@outlook.com
+    homepage: "https://github.com/joaopalet/cli-test"
+    description: "A test CLI built by JP"
+    license: "Apache-2.0"
+    skip_upload: auto
