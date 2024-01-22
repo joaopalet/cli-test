@@ -1,2 +1,3 @@
-# cli-test
-Testing build a CLI and distribute with Homebrew
+# JP CLI
+
+A CLI built to test distributions with Homebrew and Snapcraft.
