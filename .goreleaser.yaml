@@ -49,39 +49,23 @@ changelog:
 
 nfpms:
   - id: linux-packages
-
-    # Build IDs for the builds you want to create NFPM packages for.
-    # Defaults empty, which means no filtering.
     builds:
       - linux-builds
-
-    # Your app's vendor.
     vendor: JP
-
-    # Your app's homepage.
     homepage: https://github.com/joaopalet
-
-    # Your app's maintainer.
-    # Which email to use here? Technical account email?
     maintainer: JP <joao.palet@outlook.com>
-
-    # Your app's description.
     description: A command-line interface built by JP.
-
-    # Your app's license.
     license: Apache 2.0
-
-    # Formats to be generated.
     formats:
       - deb
       - rpm
 
-signs:
-  - artifacts: package
-    args: ["-u", "{{ .Env.GPG_FINGERPRINT }}", "--output", "${signature}", "--detach-sign", "${artifact}"]
+# signs:
+#   - artifacts: package
+#     args: ["-u", "{{ .Env.GPG_FINGERPRINT }}", "--output", "${signature}", "--detach-sign", "${artifact}"]
 
 brews:
-  - tap:
+  - repository:
       owner: joaopalet
       name: homebrew-cli-test
     commit_author:
@@ -91,3 +75,26 @@ brews:
     description: "A test CLI built by JP"
     license: "Apache-2.0"
     skip_upload: auto
+
+snapcrafts:
+  - id: snap-packages
+    # Build IDs for the builds you want to create snapcraft packages for.
+    builds:
+      - linux-builds
+    # The name of the snap.
+    name: jp-cli
+    # The canonical title of the application, displayed in the software
+    # centre graphical frontends.
+    title: JP CLI
+    # Whether to publish the snap to the snapcraft store.
+    # Remember you need to `snapcraft login` first.
+    publish: true
+    # Single-line elevator pitch for your amazing snap.
+    # 79 char long at most.
+    summary: A test CLI built by JP.
+    # This the description of your snap. You have a paragraph or two to tell the
+    # most important story about your snap. Keep it under 100 words though,
+    # we live in tweetspace and your description wants to look good in the snap
+    # store.
+    description: A test CLI built by JP. Trying to publish it to the Snapcraft store!
+    license: Apache-2.0
