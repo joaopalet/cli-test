@@ -4,16 +4,21 @@ Copyright © 2024 NAME HERE <EMAIL ADDRESS>
 package cmd
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/spf13/cobra"
 )
 
+var (
+	version = "dev"
+)
+
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "jp-cli",
-	Short: "A test CLI build by JP (v0.0.12)",
-	Long:  `A test CLI build by JP (v0.0.12). I will try to distirbute it using Homebrew.`,
+	Short: fmt.Sprintf("A test CLI build by JP (version %s)", version),
+	Long:  fmt.Sprintf("A test CLI build by JP (version %s)", version),
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },
