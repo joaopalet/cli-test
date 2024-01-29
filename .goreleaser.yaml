@@ -75,6 +75,7 @@ brews:
     description: "A test CLI built by JP"
     license: "Apache-2.0"
     skip_upload: auto
+    folder: Formula
 
 snapcrafts:
   - id: snap-packages
