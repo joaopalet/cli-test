@@ -99,6 +99,7 @@ snapcrafts:
     # store.
     description: A test CLI built by JP. Trying to publish it to the Snapcraft store!
     license: Apache-2.0
+    grade: devel
     apps:
       # The name of the app must be the same name as the binary built or the snapcraft name.
       jp-run:
