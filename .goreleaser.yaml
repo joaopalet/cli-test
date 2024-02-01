@@ -84,7 +84,7 @@ snapcrafts:
       - linux-builds
     name_template: jp-cli-template
     # The name of the snap.
-    name: jp-cli-name
+    name: jp-cli
     # The canonical title of the application, displayed in the software
     # centre graphical frontends.
     title: JP CLI
