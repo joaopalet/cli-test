@@ -106,4 +106,4 @@ snapcrafts:
         # You can override the command name.
         #
         # Default: AppName
-        # command: jp
+        command: bin/jp
