@@ -82,8 +82,9 @@ snapcrafts:
     # Build IDs for the builds you want to create snapcraft packages for.
     builds:
       - linux-builds
+    name_template: jp-cli-template
     # The name of the snap.
-    name: jp-cli
+    name: jp-cli-name
     # The canonical title of the application, displayed in the software
     # centre graphical frontends.
     title: JP CLI
