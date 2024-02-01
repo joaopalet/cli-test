@@ -8,7 +8,7 @@ builds:
       - CGO_ENABLED=0
     goos:
       - linux
-    binary: "jp-cli"
+    binary: "jp-run"
 
   - id: windows-builds
     env:
@@ -22,7 +22,7 @@ builds:
       - CGO_ENABLED=0
     goos:
       - darwin
-    binary: "jp-cli"
+    binary: "jp-run"
 
 archives:
   - format: tar.gz
@@ -106,9 +106,9 @@ snapcrafts:
     #     mode: 0755
     apps:
       # The name of the app must be the same name as the binary built or the snapcraft name.
-      jp-cli:
+      jp-run:
         # You can override the command name.
         #
         # Default: AppName
         # command: bin/jp-run
-        aliases: ["jp-alias"]
+        aliases: ["jp-run"]
