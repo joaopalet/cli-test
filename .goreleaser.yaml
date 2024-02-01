@@ -100,14 +100,15 @@ snapcrafts:
     description: A test CLI built by JP. Trying to publish it to the Snapcraft store!
     license: Apache-2.0
     grade: devel
-    extra_files:
-      - source: jp-cli
-        destination: bin/jp-run
-        mode: 0755
+    # extra_files:
+    #   - source: jp-cli
+    #     destination: bin/jp-run
+    #     mode: 0755
     apps:
       # The name of the app must be the same name as the binary built or the snapcraft name.
       jp-cli:
         # You can override the command name.
         #
         # Default: AppName
-        command: bin/jp-run
+        # command: bin/jp-run
+        aliases: ["jp-alias"]
