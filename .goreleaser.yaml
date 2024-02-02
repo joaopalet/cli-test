@@ -60,45 +60,54 @@ nfpms:
       - deb
       - rpm
 
+publishers:
+  - name: fury.io
+    # by specifying `packages` id here goreleaser will only use this publisher
+    # with artifacts identified by this id
+    ids:
+      - linux-packages
+    dir: "{{ dir .ArtifactPath }}"
+    cmd: curl -F package=@{{ .ArtifactName }} https://{{ .Env.FURY_TOKEN }}@push.fury.io/joaopalet/ 
+
 # signs:
 #   - artifacts: package
 #     args: ["-u", "{{ .Env.GPG_FINGERPRINT }}", "--output", "${signature}", "--detach-sign", "${artifact}"]
 
-brews:
-  - repository:
-      owner: joaopalet
-      name: homebrew-cli-test
-    commit_author:
-      name: joaopalet
-      email: joao.palet@outlook.com
-    homepage: "https://github.com/joaopalet/cli-test"
-    description: "A test CLI built by JP"
-    license: "Apache-2.0"
-    skip_upload: auto
-    folder: Formula
+# brews:
+#   - repository:
+#       owner: joaopalet
+#       name: homebrew-cli-test
+#     commit_author:
+#       name: joaopalet
+#       email: joao.palet@outlook.com
+#     homepage: "https://github.com/joaopalet/cli-test"
+#     description: "A test CLI built by JP"
+#     license: "Apache-2.0"
+#     skip_upload: auto
+#     folder: Formula
 
-snapcrafts:
-  - id: snap-packages
-    # Build IDs for the builds you want to create snapcraft packages for.
-    builds:
-      - linux-builds
-    # The name of the snap.
-    name: jp-cli
-    # The canonical title of the application, displayed in the software
-    # centre graphical frontends.
-    title: JP CLI
-    # Whether to publish the snap to the snapcraft store.
-    # Remember you need to `snapcraft login` first.
-    publish: true
-    # Single-line elevator pitch for your amazing snap.
-    # 79 char long at most.
-    summary: A test CLI built by JP.
-    # This the description of your snap. You have a paragraph or two to tell the
-    # most important story about your snap. Keep it under 100 words though,
-    # we live in tweetspace and your description wants to look good in the snap
-    # store.
-    description: A test CLI built by JP. Trying to publish it to the Snapcraft store!
-    license: Apache-2.0
-    apps:
-      jp-cli:
-        plugs: ["network"]
+# snapcrafts:
+#   - id: snap-packages
+#     # Build IDs for the builds you want to create snapcraft packages for.
+#     builds:
+#       - linux-builds
+#     # The name of the snap.
+#     name: jp-cli
+#     # The canonical title of the application, displayed in the software
+#     # centre graphical frontends.
+#     title: JP CLI
+#     # Whether to publish the snap to the snapcraft store.
+#     # Remember you need to `snapcraft login` first.
+#     publish: true
+#     # Single-line elevator pitch for your amazing snap.
+#     # 79 char long at most.
+#     summary: A test CLI built by JP.
+#     # This the description of your snap. You have a paragraph or two to tell the
+#     # most important story about your snap. Keep it under 100 words though,
+#     # we live in tweetspace and your description wants to look good in the snap
+#     # store.
+#     description: A test CLI built by JP. Trying to publish it to the Snapcraft store!
+#     license: Apache-2.0
+#     apps:
+#       jp-cli:
+#         plugs: ["network"]
