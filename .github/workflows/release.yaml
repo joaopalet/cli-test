@@ -15,7 +15,8 @@ permissions:
   contents: write
 
 jobs:
-  goreleaser:
+  release:
+    name: Release
     runs-on: macOS-latest
     env:
       SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_TOKEN }}
