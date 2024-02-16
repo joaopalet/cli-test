@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   goreleaser:
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
     env:
       SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_TOKEN }}
     steps:
@@ -46,3 +46,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
           GPG_FINGERPRINT: ${{ steps.import_gpg.outputs.fingerprint }}
           FURY_TOKEN: ${{ secrets.FURY_PUSH_TOKEN }}
+      - name: Install Aptly
+        run: |
+          brew install aptly
+      - name: Create Aptly repository
+        run: |
+          aptly repo create -distribution=jp-cli new-repo
+          aplty repo add new-repo dist/
+          aplty repo list
+          aptly repo search new-repo jp-cli
