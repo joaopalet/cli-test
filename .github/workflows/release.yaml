@@ -53,5 +53,5 @@ jobs:
         run: |
           aptly repo create -distribution=jp-cli new-repo
           aplty repo add new-repo dist/
-          aplty repo list
+          aptly repo list
           aptly repo search new-repo jp-cli
