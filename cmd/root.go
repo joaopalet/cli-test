@@ -45,7 +45,7 @@ func NewRootCmd(version string) *cobra.Command {
 
 			table := tables.NewTable()
 			table.SetHeader("FIELD", "VALUE")
-			table.AddRow("Date and time", worldTime.Datetime)
+			table.AddRow("Datetime", worldTime.Datetime)
 			err = table.Display(cmd)
 			if err != nil {
 				return fmt.Errorf("render table: %w", err)
