@@ -60,14 +60,14 @@ nfpms:
       - deb
       - rpm
 
-publishers:
-  - name: fury.io
-    # by specifying `packages` id here goreleaser will only use this publisher
-    # with artifacts identified by this id
-    ids:
-      - linux-packages
-    dir: "{{ dir .ArtifactPath }}"
-    cmd: curl -F package=@{{ .ArtifactName }} https://{{ .Env.FURY_TOKEN }}@push.fury.io/joaopalet/ 
+# publishers:
+#   - name: fury.io
+#     # by specifying `packages` id here goreleaser will only use this publisher
+#     # with artifacts identified by this id
+#     ids:
+#       - linux-packages
+#     dir: "{{ dir .ArtifactPath }}"
+#     cmd: curl -F package=@{{ .ArtifactName }} https://{{ .Env.FURY_TOKEN }}@push.fury.io/joaopalet/ 
 
 # signs:
 #   - artifacts: package
