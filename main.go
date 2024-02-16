@@ -6,7 +6,7 @@ package main
 import "jp-cli/cmd"
 
 var (
-	version = "dev"
+	version = "DEV"
 )
 
 func main() {
