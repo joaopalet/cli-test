@@ -6,6 +6,8 @@
 
 A CLI built to test distributions with Homebrew and Snapcraft.
 
+<a name="new-idp-warning"></a>
+
 > [!WARNING]
 > Starting on July 9 2024, the new STACKIT Identity Provider (IDP) will be available.
 > 
