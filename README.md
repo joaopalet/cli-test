@@ -6,7 +6,6 @@
 
 A CLI built to test distributions with Homebrew and Snapcraft.
 
-> [!WARNING] 
 > Starting on July 9 2024, the new STACKIT Identity Provider (IDP) will be available.
 > 
 > On this date, we will release a new version of the STACKIT CLI that will use the new IDP for user authentication. This also means that the **user authentication on STACKIT CLI versions released before July 9 2024 is no longer guaranteed to work for all services**.
